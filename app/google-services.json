@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "354243565303",
+    "firebase_url": "https://indie-corner.firebaseio.com",
+    "project_id": "indie-corner",
+    "storage_bucket": "indie-corner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354243565303:android:30f873d11826c566",
+        "android_client_info": {
+          "package_name": "com.delug3.indiecorner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354243565303-1eli8gvaqub9e0fbk23pt2dmffa40tbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4p_LwxPov6CsXPXgJG-ECPDwCMr7VwQE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
