@@ -49,25 +49,25 @@ public class Juego_Detalle_Activity extends AppCompatActivity
 
     public static final String KEY_RESTAURANT_ID = "key_restaurant_id";
 
-    @BindView(R.id.restaurant_image)
+    @BindView(R.id.juego_image)
     ImageView mImageView;
 
-    @BindView(R.id.restaurant_name)
+    @BindView(R.id.juego_name)
     TextView mNameView;
 
-    @BindView(R.id.restaurant_rating)
+    @BindView(R.id.juego_rating)
     MaterialRatingBar mRatingIndicator;
 
-    @BindView(R.id.restaurant_num_ratings)
+    @BindView(R.id.juego_num_ratings)
     TextView mNumRatingsView;
 
-    @BindView(R.id.restaurant_city)
+    @BindView(R.id.juego_city)
     TextView mCityView;
 
-    @BindView(R.id.restaurant_category)
+    @BindView(R.id.juego_category)
     TextView mCategoryView;
 
-    @BindView(R.id.restaurant_price)
+    @BindView(R.id.juego_price)
     TextView mPriceView;
 
     @BindView(R.id.view_empty_ratings)
@@ -150,7 +150,7 @@ public class Juego_Detalle_Activity extends AppCompatActivity
                 .into(mImageView);
     }
 
-    @OnClick(R.id.restaurant_button_back)
+    @OnClick(R.id.juego_button_back)
     public void onBackArrowClicked(View view) {
         onBackPressed();
     }

@@ -54,7 +54,7 @@ public class JuegosAdapter extends FireStoreAdapter<JuegosAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new ViewHolder(inflater.inflate(R.layout.item_restaurant, parent, false));
+        return new ViewHolder(inflater.inflate(R.layout.item_juegos, parent, false));
     }
 
     @Override
@@ -64,25 +64,25 @@ public class JuegosAdapter extends FireStoreAdapter<JuegosAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.restaurant_item_image)
+        @BindView(R.id.juego_item_image)
         ImageView imageView;
 
-        @BindView(R.id.restaurant_item_name)
+        @BindView(R.id.juego_item_name)
         TextView nameView;
 
-        @BindView(R.id.restaurant_item_rating)
+        @BindView(R.id.juego_item_rating)
         MaterialRatingBar ratingBar;
 
-        @BindView(R.id.restaurant_item_num_ratings)
+        @BindView(R.id.juego_item_num_ratings)
         TextView numRatingsView;
 
-        @BindView(R.id.restaurant_item_price)
+        @BindView(R.id.juego_item_price)
         TextView priceView;
 
-        @BindView(R.id.restaurant_item_category)
+        @BindView(R.id.juego_item_category)
         TextView categoryView;
 
-        @BindView(R.id.restaurant_item_city)
+        @BindView(R.id.juego_item_city)
         TextView cityView;
 
         public ViewHolder(View itemView) {
