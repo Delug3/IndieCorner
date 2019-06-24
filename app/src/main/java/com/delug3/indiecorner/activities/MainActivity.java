@@ -190,10 +190,10 @@ public class MainActivity extends AppCompatActivity implements
 
 
     @Override
-    public void onJuegoSelected(DocumentSnapshot restaurant) {
-        // Go to the details page for the selected restaurant
+    public void onJuegoSelected(DocumentSnapshot juego) {
+        // Go to the details page for the selected juego
         Intent intent = new Intent(this, Juego_Detalle_Activity.class);
-        intent.putExtra(Juego_Detalle_Activity.KEY_RESTAURANT_ID, restaurant.getId());
+        intent.putExtra(Juego_Detalle_Activity.KEY_JUEGO_ID, juego.getId());
 
         startActivity(intent);
     }

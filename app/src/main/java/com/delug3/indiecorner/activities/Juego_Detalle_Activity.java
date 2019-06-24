@@ -45,9 +45,9 @@ import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 public class Juego_Detalle_Activity extends AppCompatActivity
         implements EventListener<DocumentSnapshot> {
 
-    private static final String TAG = "RestaurantDetail";
+    private static final String TAG = "JuegoDetail";
 
-    public static final String KEY_RESTAURANT_ID = "key_restaurant_id";
+    public static final String KEY_JUEGO_ID = "key_juego_id";
 
     @BindView(R.id.juego_image)
     ImageView mImageView;
@@ -78,28 +78,28 @@ public class Juego_Detalle_Activity extends AppCompatActivity
 
 
     private FirebaseFirestore mFirestore;
-    private DocumentReference mRestaurantRef;
-    private ListenerRegistration mRestaurantRegistration;
+    private DocumentReference mJuegoRef;
+    private ListenerRegistration mJuegoRegistration;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restaurant_detail);
+        setContentView(R.layout.activity_juego_detail);
         ButterKnife.bind(this);
 
-        // Get restaurant ID from extras
-        String restaurantId = getIntent().getExtras().getString(KEY_RESTAURANT_ID);
-        if (restaurantId == null) {
-            throw new IllegalArgumentException("Must pass extra " + KEY_RESTAURANT_ID);
+        // Get juego ID from extras
+        String juegoId = getIntent().getExtras().getString(KEY_JUEGO_ID);
+        if (juegoId == null) {
+            throw new IllegalArgumentException("Must pass extra " + KEY_JUEGO_ID);
         }
 
         // Initialize Firestore
         mFirestore = FirebaseFirestore.getInstance();
 
-        // Get reference to the restaurant
-        mRestaurantRef = mFirestore.collection("juegos").document(restaurantId);
+        // Get reference juego
+        mJuegoRef = mFirestore.collection("juegos").document(juegoId);
 
 
     }
@@ -109,7 +109,7 @@ public class Juego_Detalle_Activity extends AppCompatActivity
         super.onStart();
 
 
-        mRestaurantRegistration = mRestaurantRef.addSnapshotListener(this);
+        mJuegoRegistration = mJuegoRef.addSnapshotListener(this);
     }
 
     @Override
@@ -117,31 +117,31 @@ public class Juego_Detalle_Activity extends AppCompatActivity
         super.onStop();
 
 
-        if (mRestaurantRegistration != null) {
-            mRestaurantRegistration.remove();
-            mRestaurantRegistration = null;
+        if (mJuegoRegistration != null) {
+            mJuegoRegistration.remove();
+            mJuegoRegistration = null;
         }
     }
 
-    private Task<Void> addRating(final DocumentReference restaurantRef, final Rating rating) {
+    private Task<Void> addRating(final DocumentReference mJuegoRef, final Rating rating) {
         // TODO(developer): Implement
         return Tasks.forException(new Exception("not yet implemented"));
     }
 
     /**
-     * Listener for the Juego document ({@link #mRestaurantRef}).
+     * Listener for the Juego document ({@link #mJuegoRef}).
      */
     @Override
     public void onEvent(DocumentSnapshot snapshot, FirebaseFirestoreException e) {
         if (e != null) {
-            Log.w(TAG, "restaurant:onEvent", e);
+            Log.w(TAG, "juego:onEvent", e);
             return;
         }
 
-        onRestaurantLoaded(snapshot.toObject(Juego.class));
+        onJuegoLoaded(snapshot.toObject(Juego.class));
     }
 
-    private void onRestaurantLoaded(Juego juego) {
+    private void onJuegoLoaded(Juego juego) {
         mNameView.setText(juego.getNombre());
 
         // Background image
