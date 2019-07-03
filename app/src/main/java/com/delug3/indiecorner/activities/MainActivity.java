@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
-    @BindView(R.id.recycler_restaurants)
+    @BindView(R.id.recycler_juegos)
     RecyclerView mRestaurantsRecycler;
 
     @BindView(R.id.view_empty)
@@ -192,8 +192,8 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onJuegoSelected(DocumentSnapshot juego) {
         // Go to the details page for the selected juego
-        Intent intent = new Intent(this, Juego_Detalle_Activity.class);
-        intent.putExtra(Juego_Detalle_Activity.KEY_JUEGO_ID, juego.getId());
+        Intent intent = new Intent(this, JuegoDetalleActivity.class);
+        intent.putExtra(JuegoDetalleActivity.KEY_JUEGO_ID, juego.getId());
 
         startActivity(intent);
     }

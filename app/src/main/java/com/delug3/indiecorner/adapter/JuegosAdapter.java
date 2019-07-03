@@ -64,14 +64,14 @@ public class JuegosAdapter extends FireStoreAdapter<JuegosAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.juego_item_image)
+        @BindView(R.id.juego_item_imagen)
         ImageView imageView;
 
-        @BindView(R.id.juego_item_name)
-        TextView nameView;
+        @BindView(R.id.juego_item_nombre)
+        TextView nombreView;
 
-        @BindView(R.id.juego_item_rating)
-        MaterialRatingBar ratingBar;
+        @BindView(R.id.juego_item_puntuacion)
+        MaterialRatingBar puntuacionBar;
 
         @BindView(R.id.juego_item_num_ratings)
         TextView numRatingsView;
@@ -101,8 +101,8 @@ public class JuegosAdapter extends FireStoreAdapter<JuegosAdapter.ViewHolder> {
                     .load(juego.getFoto())
                     .into(imageView);
 
-            nameView.setText(juego.getNombre());
-
+            nombreView.setText(juego.getNombre());
+            puntuacionBar.setRating(juego.getPuntuacion());
 
 
             // Click listener

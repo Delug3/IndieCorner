@@ -42,21 +42,21 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.zhanghai.android.materialratingbar.MaterialRatingBar;
 
-public class Juego_Detalle_Activity extends AppCompatActivity
+public class JuegoDetalleActivity extends AppCompatActivity
         implements EventListener<DocumentSnapshot> {
 
     private static final String TAG = "JuegoDetail";
 
     public static final String KEY_JUEGO_ID = "key_juego_id";
 
-    @BindView(R.id.juego_image)
-    ImageView mImageView;
+    @BindView(R.id.juego_imagen)
+    ImageView mImagenView;
 
-    @BindView(R.id.juego_name)
-    TextView mNameView;
+    @BindView(R.id.juego_nombre)
+    TextView mNombreView;
 
-    @BindView(R.id.juego_rating)
-    MaterialRatingBar mRatingIndicator;
+    @BindView(R.id.juego_puntuacion)
+    MaterialRatingBar mPuntuacionIndicador;
 
     @BindView(R.id.juego_num_ratings)
     TextView mNumRatingsView;
@@ -142,12 +142,13 @@ public class Juego_Detalle_Activity extends AppCompatActivity
     }
 
     private void onJuegoLoaded(Juego juego) {
-        mNameView.setText(juego.getNombre());
+        mNombreView.setText(juego.getNombre());
+        mPuntuacionIndicador.setRating(juego.getPuntuacion());
 
         // Background image
-        Glide.with(mImageView.getContext())
+        Glide.with(mImagenView.getContext())
                 .load(juego.getFoto())
-                .into(mImageView);
+                .into(mImagenView);
     }
 
     @OnClick(R.id.juego_button_back)
