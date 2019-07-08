@@ -26,7 +26,7 @@ public class Juego {
     private String nombre;
     private String desarrolladora;
     private String descripcion;
-    private String fecha;
+    private String lanzamiento;
     private String foto;
     private String genero;
     private float puntuacion;
@@ -35,12 +35,12 @@ public class Juego {
 
     public Juego() {}
 
-    public Juego(String nombre, String desarrolladora, String descripcion, String fecha,
+    public Juego(String nombre, String desarrolladora, String descripcion, String lanzamiento,
                  String foto,String genero, float puntuacion,String trailer,String web) {
         this.nombre = nombre;
         this.desarrolladora = desarrolladora;
         this.descripcion = descripcion;
-        this.fecha = fecha;
+        this.lanzamiento = lanzamiento;
         this.foto = foto;
         this.genero = genero;
         this.puntuacion = puntuacion; //float, puntuacion sobre 5.Importante: valor number en firebase
@@ -72,12 +72,12 @@ public class Juego {
         this.descripcion = descripcion;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getLanzamiento() {
+        return lanzamiento;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setLanzamiento(String lanzamiento) {
+        this.lanzamiento = lanzamiento;
     }
 
     public String getFoto() {

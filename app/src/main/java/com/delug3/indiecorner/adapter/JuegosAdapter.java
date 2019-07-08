@@ -73,17 +73,12 @@ public class JuegosAdapter extends FireStoreAdapter<JuegosAdapter.ViewHolder> {
         @BindView(R.id.juego_item_puntuacion)
         MaterialRatingBar puntuacionBar;
 
-        @BindView(R.id.juego_item_num_ratings)
-        TextView numRatingsView;
 
-        @BindView(R.id.juego_item_price)
-        TextView priceView;
+        @BindView(R.id.juego_item_desarrolladora)
+        TextView desarrolladoraView;
 
-        @BindView(R.id.juego_item_category)
-        TextView categoryView;
-
-        @BindView(R.id.juego_item_city)
-        TextView cityView;
+        @BindView(R.id.juego_item_lanzamiento)
+        TextView lanzamientoView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -101,8 +96,11 @@ public class JuegosAdapter extends FireStoreAdapter<JuegosAdapter.ViewHolder> {
                     .load(juego.getFoto())
                     .into(imageView);
 
+            //campos a incluir en recyclerview
             nombreView.setText(juego.getNombre());
             puntuacionBar.setRating(juego.getPuntuacion());
+            desarrolladoraView.setText(juego.getDesarrolladora());
+            lanzamientoView.setText(juego.getLanzamiento());
 
 
             // Click listener

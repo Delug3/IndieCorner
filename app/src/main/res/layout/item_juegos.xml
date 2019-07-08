@@ -13,7 +13,7 @@
         android:layout_height="60dp"
         android:background="#757575"
         android:scaleType="centerCrop"
-        android:src="@drawable/food_1" />
+        android:src="@drawable/hollowknight" />
 
     <TextView
         android:id="@+id/juego_item_nombre"
@@ -24,11 +24,11 @@
         android:layout_marginBottom="4dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="-2dp"
-        android:layout_toLeftOf="@+id/juego_item_price"
+
         android:layout_toRightOf="@+id/juego_item_imagen"
         android:ellipsize="end"
         android:maxLines="1"
-        tools:text="Foo's Bar" />
+        tools:text="Ori and the Blind Forest" />
 
     <me.zhanghai.android.materialratingbar.MaterialRatingBar
         android:id="@+id/juego_item_puntuacion"
@@ -39,53 +39,35 @@
         android:layout_below="@+id/juego_item_nombre"
         android:layout_marginBottom="4dp" />
 
-    <TextView
-        android:id="@+id/juego_item_num_ratings"
-        style="@style/AppTheme.Caption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/juego_item_puntuacion"
-        android:layout_alignTop="@+id/juego_item_puntuacion"
-        android:layout_marginLeft="4dp"
-        android:layout_toRightOf="@+id/juego_item_puntuacion"
-        android:gravity="center_vertical"
-        android:textColor="@color/greyDisabled"
-        tools:text="(10)" />
+
 
     <TextView
-        android:id="@+id/juego_item_category"
+        android:id="@+id/juego_item_desarrolladora"
         style="@style/AppTheme.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/juego_item_nombre"
         android:layout_below="@+id/juego_item_puntuacion"
         android:textColor="@color/greySecondary"
-        tools:text="Italian" />
+        tools:text="Desarrolladora"/>
 
     <TextView
-        android:id="@+id/juego_item_city_divider"
+        android:id="@+id/juego_item_separador"
         style="@style/AppTheme.TextDivider"
-        android:layout_alignTop="@+id/juego_item_category"
-        android:layout_toRightOf="@+id/juego_item_category"
+        android:layout_alignTop="@+id/juego_item_desarrolladora"
+        android:layout_toRightOf="@+id/juego_item_desarrolladora"
         android:text="@string/divider_bullet" />
 
     <TextView
-        android:id="@+id/juego_item_city"
+        android:id="@+id/juego_item_lanzamiento"
         style="@style/AppTheme.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/juego_item_category"
-        android:layout_toRightOf="@+id/juego_item_city_divider"
+        android:layout_alignTop="@+id/juego_item_desarrolladora"
+        android:layout_toRightOf="@+id/juego_item_separador"
         android:textColor="@color/greySecondary"
-        tools:text="San Francisco" />
+        tools:text="Dia de Lanzamiento"/>
 
-    <TextView
-        android:id="@+id/juego_item_price"
-        style="@style/AppTheme.Caption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:textColor="@color/greySecondary"
-        tools:text="$$$" />
+
 
 </RelativeLayout>
