@@ -52,29 +52,26 @@ public class JuegoDetalleActivity extends AppCompatActivity
     @BindView(R.id.juego_imagen)
     ImageView mImagenView;
 
-    @BindView(R.id.juego_nombre)
-    TextView mNombreView;
-
     @BindView(R.id.juego_puntuacion)
     MaterialRatingBar mPuntuacionIndicador;
 
-    @BindView(R.id.juego_num_ratings)
-    TextView mNumRatingsView;
+    @BindView(R.id.juego_nombre)
+    TextView mNombreView;
 
-    @BindView(R.id.juego_city)
-    TextView mCityView;
+    @BindView(R.id.juego_descripcion)
+    TextView mDescripcionView;
 
-    @BindView(R.id.juego_category)
-    TextView mCategoryView;
+    @BindView(R.id.juego_desarrolladora)
+    TextView mDesarrolladoraView;
 
-    @BindView(R.id.juego_price)
-    TextView mPriceView;
+    @BindView(R.id.juego_lanzamiento)
+    TextView mLanzamientoView;
 
-    @BindView(R.id.view_empty_ratings)
-    ViewGroup mEmptyView;
+    @BindView(R.id.juego_genero)
+    TextView mgeneroView;
 
-    @BindView(R.id.recycler_ratings)
-    RecyclerView mRatingsRecycler;
+    @BindView(R.id.juego_website)
+    TextView mWebsiteView;
 
 
     private FirebaseFirestore mFirestore;
@@ -142,8 +139,14 @@ public class JuegoDetalleActivity extends AppCompatActivity
     }
 
     private void onJuegoLoaded(Juego juego) {
-        mNombreView.setText(juego.getNombre());
         mPuntuacionIndicador.setRating(juego.getPuntuacion());
+        mNombreView.setText(juego.getNombre());
+        mDescripcionView.setText(juego.getDescripcion());
+        mDesarrolladoraView.setText(juego.getDesarrolladora());
+        mLanzamientoView.setText(juego.getLanzamiento());
+        mgeneroView.setText(juego.getGenero());
+        mWebsiteView.setText(juego.getWeb());
+
 
         // Background image
         Glide.with(mImagenView.getContext())

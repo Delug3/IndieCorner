@@ -1,173 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
-    >
+    android:background="#E0E0E0">
 
-    <RelativeLayout
-        android:id="@+id/juego_top_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="4dp">
 
-        <ImageView
-            android:id="@+id/juego_imagen"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:alpha="1.0"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/hollowknight" />
+    <ImageView
+        android:id="@+id/juego_imagen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="13dp"
+        android:alpha="1.0"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/juego_nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/hollowknight" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/gradient_up" />
-
-        <!-- Back button -->
-        <ImageView
-            android:id="@+id/juego_button_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="387dp"
-            android:layout_marginRight="387dp"
-            android:background="?attr/selectableItemBackground"
-            app:srcCompat="@drawable/ic_close_white_24px" />
-
-        <TextView
-            android:id="@+id/juego_nombre"
-            style="@style/AppTheme.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/juego_puntuacion"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="49dp"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            tools:text="Nombre del juego" />
-
-        <me.zhanghai.android.materialratingbar.MaterialRatingBar
-            android:id="@+id/juego_puntuacion"
-            style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_above="@+id/juego_category"
-            android:layout_alignLeft="@+id/juego_nombre"
-            app:mrb_progressTint="@android:color/white"
-            app:mrb_secondaryProgressTint="@android:color/white" />
-
-        <TextView
-            android:id="@+id/juego_num_ratings"
-            style="@style/AppTheme.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/juego_puntuacion"
-            android:layout_alignTop="@+id/juego_puntuacion"
-            android:layout_marginLeft="4dp"
-            android:layout_toRightOf="@+id/juego_puntuacion"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            tools:text="(10)" />
-
-        <TextView
-            android:id="@+id/juego_category"
-            style="@style/AppTheme.Subheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/juego_imagen"
-            android:layout_alignLeft="@+id/juego_nombre"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@android:color/white"
-            tools:text="Italian" />
-
-        <TextView
-            android:id="@+id/juego_city_divider"
-            style="@style/AppTheme.TextDivider"
-            android:layout_alignTop="@+id/juego_category"
-            android:layout_toRightOf="@+id/juego_category"
-            android:text="@string/divider_bullet"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:id="@+id/juego_city"
-            style="@style/AppTheme.Subheader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/juego_category"
-            android:layout_below="@+id/juego_category"
-            android:layout_toRightOf="@+id/juego_city_divider"
-            android:textColor="@android:color/white"
-            tools:text="San Francisco" />
-
-        <TextView
-            android:id="@+id/juego_price"
-            style="@style/AppTheme.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/juego_nombre"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            tools:text="$$$" />
-
-    </RelativeLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_show_rating_dialog"
+    <View
+        android:id="@+id/juego_video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/juego_top_card"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="-28dp"
+        android:background="@drawable/gradient_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Back button -->
+    <ImageView
+        android:id="@+id/juego_button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        app:srcCompat="@drawable/ic_add_white_24px" />
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close_white_24px" />
+
+    <TextView
+        android:id="@+id/juego_nombre"
+        style="@style/AppTheme.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="28dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/juego_puntuacion"
+        tools:text="Nombre del juego" />
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/juego_puntuacion"
+        style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mrb_progressTint="@android:color/white"
+        app:mrb_secondaryProgressTint="@android:color/white" />
+
+
+    <TextView
+        android:id="@+id/juego_desarrolladora"
+        style="@style/AppTheme.Subheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/juego_descripcion"
+        tools:text="Desarrolladora" />
+
+    <TextView
+        android:id="@+id/juego_genero"
+        style="@style/AppTheme.Subheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="19dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/juego_desarrolladora"
+        tools:text="Genero" />
+
+    <TextView
+        android:id="@+id/juego_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Website"
+        app:layout_constraintStart_toStartOf="@+id/juego_lanzamiento"
+        app:layout_constraintTop_toBottomOf="@+id/juego_lanzamiento" />
+
+    <TextView
+        android:id="@+id/juego_descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Descripcion del Juego"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/juego_nombre" />
+
+    <TextView
+        android:id="@+id/juego_lanzamiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:text="Lanzamiento"
+        app:layout_constraintBottom_toBottomOf="@+id/juego_desarrolladora"
+        app:layout_constraintStart_toEndOf="@+id/juego_desarrolladora" />
+
 
     <!-- Ratings -->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_ratings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/juego_top_card"
-        android:background="@android:color/transparent"
-        android:clipToPadding="false"
-        android:paddingBottom="16dp"
-        android:paddingTop="28dp"
-        android:visibility="gone"
-         />
 
     <!-- View for empty ratings -->
-    <LinearLayout
-        android:id="@+id/view_empty_ratings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/juego_top_card"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone"
-        tools:visibility="visible">
 
-        <ImageView
-            android:src="@drawable/pizza_monster"
-            style="@style/AppTheme.PizzaGuy" />
-
-        <TextView
-            style="@style/AppTheme.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/message_no_reviews"
-            android:textColor="@color/greyDisabled" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
