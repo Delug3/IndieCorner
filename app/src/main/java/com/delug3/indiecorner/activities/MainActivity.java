@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements
     Toolbar mToolbar;
 
     @BindView(R.id.recycler_juegos)
-    RecyclerView mRestaurantsRecycler;
+    RecyclerView mJuegosRecycler;
 
     @BindView(R.id.view_empty)
     ViewGroup mEmptyView;;
@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity implements
 
     private void initFirestore() {
         mFirestore = FirebaseFirestore.getInstance();
-        // Get the 50 highest rated restaurants
-        mQuery = mFirestore.collection("juegos")
+
+                mQuery = mFirestore.collection("juegos")
                // .orderBy("avgRating", Query.Direction.DESCENDING)
                 .limit(LIMIT);
 
@@ -110,10 +110,10 @@ public class MainActivity extends AppCompatActivity implements
             protected void onDataChanged() {
                 // Show/hide content if the query returns empty.
                 if (getItemCount() == 0) {
-                    mRestaurantsRecycler.setVisibility(View.GONE);
+                    mJuegosRecycler.setVisibility(View.GONE);
                     mEmptyView.setVisibility(View.VISIBLE);
                 } else {
-                    mRestaurantsRecycler.setVisibility(View.VISIBLE);
+                    mJuegosRecycler.setVisibility(View.VISIBLE);
                     mEmptyView.setVisibility(View.GONE);
                 }
             }
@@ -126,8 +126,8 @@ public class MainActivity extends AppCompatActivity implements
             }
         };
 
-        mRestaurantsRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mRestaurantsRecycler.setAdapter(mAdapter);
+        mJuegosRecycler.setLayoutManager(new LinearLayoutManager(this));
+        mJuegosRecycler.setAdapter(mAdapter);
     }
 
     @Override

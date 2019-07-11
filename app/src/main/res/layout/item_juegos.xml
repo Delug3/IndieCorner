@@ -56,7 +56,7 @@
         style="@style/AppTheme.TextDivider"
         android:layout_alignTop="@+id/juego_item_desarrolladora"
         android:layout_toRightOf="@+id/juego_item_desarrolladora"
-        android:text="@string/divider_bullet" />
+       />
 
     <TextView
         android:id="@+id/juego_item_lanzamiento"
