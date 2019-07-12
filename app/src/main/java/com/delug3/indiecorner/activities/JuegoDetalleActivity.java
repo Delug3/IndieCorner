@@ -18,10 +18,10 @@
 import android.media.Rating;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,11 +68,14 @@ public class JuegoDetalleActivity extends AppCompatActivity
     TextView mLanzamientoView;
 
     @BindView(R.id.juego_genero)
-    TextView mgeneroView;
+    TextView mGeneroView;
 
     @BindView(R.id.juego_website)
     TextView mWebsiteView;
 
+    //load webview with trailer
+    @BindView(R.id.juego_webView)
+    WebView mTrailerView;
 
     private FirebaseFirestore mFirestore;
     private DocumentReference mJuegoRef;
@@ -144,9 +147,13 @@ public class JuegoDetalleActivity extends AppCompatActivity
         mDescripcionView.setText(juego.getDescripcion());
         mDesarrolladoraView.setText(juego.getDesarrolladora());
         mLanzamientoView.setText(juego.getLanzamiento());
-        mgeneroView.setText(juego.getGenero());
+        mGeneroView.setText(juego.getGenero());
         mWebsiteView.setText(juego.getWeb());
 
+        mTrailerView.setWebViewClient(new WebViewClient());
+        mTrailerView.getSettings().setJavaScriptEnabled(true);
+        mTrailerView.getSettings().setDomStorageEnabled(true);
+        mTrailerView.loadUrl(juego.getTrailer());
 
         // Background image
         Glide.with(mImagenView.getContext())
