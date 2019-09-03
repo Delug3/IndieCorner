@@ -28,6 +28,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.delug3.indiecorner.R;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements
 
     @BindView(R.id.view_empty)
     ViewGroup mEmptyView;;
+
 
     private FirebaseFirestore mFirestore;
     private Query mQuery;
